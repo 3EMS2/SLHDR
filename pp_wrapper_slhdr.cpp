@@ -32,8 +32,10 @@ pp_init_slhdr_lib(void** pslhdr_context)
 void
 pp_uninit_slhdr_lib(void* slhdr_context)
 {
-    SLHDR::SLPostprocessorContext* dsl = (SLHDR::SLPostprocessorContext*)slhdr_context;
-    delete dsl;
+    if (slhdr_context){
+        SLHDR::SLPostprocessorContext* dsl = (SLHDR::SLPostprocessorContext*)slhdr_context;
+        delete dsl;
+    }
 }
 
 void
