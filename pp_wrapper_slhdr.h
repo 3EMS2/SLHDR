@@ -20,6 +20,8 @@ pp_init_slhdr_lib(void** pslhdr_context);
 void 
 pp_uninit_slhdr_lib(void* slhdr_context);
 
+void
+pp_set_display_peak(void* slhdr_context, int value);
 #ifdef __cplusplus
 }
 #endif

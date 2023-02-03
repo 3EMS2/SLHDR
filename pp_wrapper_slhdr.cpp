@@ -17,7 +17,7 @@ pp_init_slhdr_lib(void** pslhdr_context)
 
     //create a the cpu list to specify on which cpu threads from the thread pool will be binded (we use 4 cpu here)
     std::vector<u8> cpulist;
-    for (u8 cpu = 0; cpu < SLHDR::getMaxThreadAvailableCount(); cpu++)
+    for (u8 cpu = 0; cpu < 8; cpu++)
         cpulist.push_back(cpu);
 
     //instanciate postprocessor context with filled properties
@@ -75,4 +75,12 @@ pp_sdr_to_hdr(void* slhdr_context, int16_t** sdr_pic, int16_t** hdr_pic,
     printf("done !\n");
 
     return ;
+}
+
+void
+pp_set_display_peak(void* slhdr_context, int value)
+{
+    //set        POSTPROCESSOR_API SLError setDisplayBrightness(f32 displayBrightness);
+    SLHDR::SLPostprocessorContext* dsl = (SLHDR::SLPostprocessorContext*)slhdr_context;
+    dsl->setDisplayBrightness(value);
 }
