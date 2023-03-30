@@ -7,9 +7,10 @@ if(WIN32)
 
     project( slhdrwrapper VERSION 1.0.0 DESCRIPTION "C wrapper to use Interdigital SLHDR library")
 
-    set( SLHDR_LIBRARIES "C:/Users/quinquisc/VS/SLHDR_SDK_v1.7.0_win10_msvc16_AVX2/SLHDR_SDK_v1.7.0_win10_msvc16_AVX2/lib/x64/Release" CACHE PATH "Path to SL-HDR libraries")
-    set( SLHDR_INCLUDES "C:/Users/quinquisc/VS/SLHDR_SDK_v1.7.0_win10_msvc16_AVX2/SLHDR_SDK_v1.7.0_win10_msvc16_AVX2/include" CACHE PATH "Path to SLHDR Common includes")
-    set( PUBLIC_HEADER "C:/Users/quinquisc/VS/SLHDR_Wrapper/pp_wrapper_slhdr.h")
+    set( SLHDRDIR "" CACHE FILEPATH "Path to SL-HDR libraries")
+    set( SLHDR_LIBRARIES "${SLHDRDIR}/lib/x64/Release/" CACHE PATH "Path to SL-HDR libraries")
+    set( SLHDR_INCLUDES "${SLHDRDIR}/include/" CACHE PATH "Path to SLHDR Common includes")
+    set( PUBLIC_HEADER "${PROJECT_SOURCE_DIR}/pp_wrapper_slhdr.h")
     set( CMAKE_INSTALL_PREFIX "${PROJECT_SOURCE_DIR}")
 
     # to install libraries
