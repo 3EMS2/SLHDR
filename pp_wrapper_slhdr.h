@@ -26,7 +26,7 @@ pp_init_slhdr_lib(void** pslhdr_context);
 export_attribute void
 pp_uninit_slhdr_lib(void* slhdr_context);
 
-void
+export_attribute void
 pp_set_display_peak(void* slhdr_context, int value);
 #ifdef __cplusplus
 }
